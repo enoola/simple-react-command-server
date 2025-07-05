@@ -29,8 +29,16 @@ git branch -M main
 git push -u origin main
 ```
 
-/!\ Copy .env file to .env.local, edit to put your values
+/!\ Copy .env file to .env.local, 
+`cp .env .env.local`
+
+open .env.local and update of your values
 content of .env global, not sensible variables
+e.g
+```
+HTTP_FQDN=localhost
+HTTP_SERVER_PORT=3000
+```
 
 ## Install npm package
 `npm install`
