@@ -81,8 +81,7 @@ cf: https://nodemon.io/
 ### Retranspile if file changes in the server folder src
 `npm run watch`
 
-### will restart the server once a file is modified
-node --loader ts-node/esm --experimental-specifier-resolution=node src/index.ts
+### Automatically restart the server if file changes
 `npm run dev2steps`
 
 ## Using the project 
@@ -132,13 +131,12 @@ curl http://localhost:3000/api/ls
 ```
 ### From a browser
 Open a browser (or browser tab),
-Remember editing .env.local file, well time to remember those value 
-Go to http://{.env.local:HTTP_SERVER_FQDN:HTTP_SERVER_PORT}/
-from my value, mentionned before:
-will respond with a json error (HTTP code 404)
+Remember editing `.env.local file`, well time to remember those value 
+Go to `http://{HTTP_SERVER_FQDN:HTTP_SERVER_PORT}/`
+from my values, mentionned before:
+for me server adress is : http://localhost:3000
 
-
-http://localhost:3000
+if you query `http://localhost:3000` you will get an error message
 {"error":"404","message":"Woop woop, Curious you"}
 
 http://localhost:3000/api/hello
@@ -160,7 +158,3 @@ npm run jtest
  -[] https://expressjs.com/en/guide/routing.html
  -[] https://cheerio.js.org/docs/intro
 
-
-## todo:
- - implement 1 function calling open remote APIs 
- - implement 1 function to execute command localy ?
