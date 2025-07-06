@@ -44,7 +44,7 @@ git clone https://github.com/enoola/simple-react-command-server.git
 ```
 You probably want to
 1. rename the folder to your new project name for example
-`cd simple-react-command-server` or `cd "the new folder name"
+`cd simple-react-command-server` or `cd "the new folder name"`
 2. change this to your git project
 ```bash
 git remote add origin git@github.com:YOUR_GITHUB_USERNAME/YOUR_PROJECT_NAME.git
