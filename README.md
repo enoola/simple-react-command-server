@@ -53,12 +53,15 @@ git branch -M main
 git push -u origin main
 ```
 
-/!\ Copy .env file to .env.local, 
+### Environment variables
+we use variable from .env.local file
+which contains non sensible values such as hostname, port
+
+1. Copy .env file to .env.local, 
 `cp .env .env.local`
 
-open .env.local and update with your values
-content of .env global, not sensible variables
-e.g
+2. Open `.env.local` and update with your values
+e.g:
 ```env
 HTTP_FQDN=localhost
 HTTP_SERVER_PORT=3000
@@ -71,11 +74,11 @@ HTTP_SERVER_PORT=3000
 #### fastest way from 1 terminal
 we use the below
 `npm run dev`
-which ultimately launches : nodemon --watch src --exec myworkmaterial/watch_transpile_relaunchwebserv.sh
+which ultimately launches : `nodemon --watch src --exec myworkmaterial/watch_transpile_relaunchwebserv.sh`
 cf: https://nodemon.io/
 
 #### Watch then nodemon 2 terminal required
-### Retraspile if file changes in the server folder src
+### Retranspile if file changes in the server folder src
 `npm run watch`
 
 ### will restart the server once a file is modified
@@ -83,13 +86,13 @@ node --loader ts-node/esm --experimental-specifier-resolution=node src/index.ts
 `npm run dev2steps`
 
 ## Using the project 
-at the point the server should be launched
+at that point the server should be launched
 `npm run dev`
 
-### Curl is practical as well 
+### Query server wuth curl command line tool 
   I assume you have curl installed, if not look at the "From a browser" section
-We know the server is accessible by querying : http://{HTTP_SERVER_FQDN}:{HTTP_SERVER_PORT}/
-  Remember editing .env.local file, well time to remember those value 
+We know the server is accessible by querying : `http://{HTTP_SERVER_FQDN}:{HTTP_SERVER_PORT}/`
+  Remember editing `.env.local` file, well time to remember those value 
   from my values, mentionned before:
     ```env
     HTTP_SERVER_FQDN='localhost'
@@ -106,7 +109,7 @@ Hello
 ```bash
 curl http://localhost:3000/api/hello
 {"message":"Hello world!"}
-``
+```
 
 we will query searchweb function
  uses [Mojeek](https://www.mojeek.com)
