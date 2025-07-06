@@ -1,14 +1,30 @@
 {
   "compilerOptions": {
-    "target": "ES2016",
-    "module": "esnext",
+    "target": "ES2022",
+    "module": "NodeNext", // Enables modern Node.js-style modules
+    "moduleResolution": "NodeNext", // Required when using import syntax
+    "allowImportingTsExtensions": true, //Allow .ts import paths
+    "noEmit": true,
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "types": [
+      "node",
+      "jest"
+    ], // Recognize Node.js and Jest globals
+    "lib": [
+      "ESNext",
+      "DOM",
+      "ES2022"
+    ],
+    "moduleDetection": "auto",
   },
   "ts-node": {
     "esm": true
   },
-  "include": ["src/*"]
+  "include": [
+    "src/*"
+  ]
 }

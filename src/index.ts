@@ -1,12 +1,15 @@
 // src index.tsx
 import express from 'express';
 import { router 
-} from './routes';
+} from './routes.ts';
 
 import cors from 'cors';
+import dotenv from 'dotenv'
+dotenv.config({ path: '.env.local' }); // Load .env.local
 
 const app = express();
-const PORT = process.env.HTTP_SERVER_PORT?process.env.HTTP_SERVER_PORT:3000;
+const PORT = process.env.HTTP_SERVER_PORT ? process.env.HTTP_SERVER_PORT : 3000;
+const FQDN = process.env.HTTP_SERVER_FQDN ? process.env.HTTP_SERVER_FQDN : 'localhkost';
 
 app.use(cors());
 
@@ -21,7 +24,7 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://${FQDN}:${PORT}`);
 });
 
 export default app

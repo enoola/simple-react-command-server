@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "not ready for that :Dnode dist/index.ts",
     "dev": "nodemon --watch src --exec myworkmaterial/watch_transpile_relaunchwebserv.sh",
-    "dev2steps": "node --loader ts-node/esm --experimental-specifier-resolution=node src/index.ts"
+    "dev2steps": "node --loader ts-node/esm --experimental-specifier-resolution=node src/index.ts",
     "watch": "tsc --watch",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -28,6 +28,7 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.10",
     "@types/supertest": "^6.0.3",
+    "dotenv": "^17.0.1",
     "jest": "^30.0.4",
     "nodemon": "^3.1.10",
     "supertest": "^7.1.1",

@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from './index';
+import app from './index.ts';
 
 describe('GET /not', () => {
     it('should return 404 with JSON message', async () => {

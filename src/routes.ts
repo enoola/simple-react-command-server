@@ -1,6 +1,6 @@
 // src/routes.tsx
 import express from 'express';
-import { GetTime } from './myClasses/GetTime';
+import { GetTime } from './myClasses/GetTime.ts';
 // https://expressjs.com/en/guide/routing.html
 
 // Simple delay function using setTimeout and promise
@@ -23,13 +23,11 @@ router.get('/time', async (req, res) => {
 
 
 
-router.get('/searchdomain/:uname', async (req, res) => {
-  //const { domainName } = req.params;
-  console.log('==?');
-  const domainname = req.params?.uname;
+router.get('/mocksearchdomain/:dnsname', async (req, res) => {
+  const domainname = req.params?.dnsname;
+  console.log (domainname)
   if (!domainname) {
     console.log(`}->no domainname provided`);
-console.log('ss');
     res.json({ message: 'no domain provided in the query'})
     return ;
   }
